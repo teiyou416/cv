@@ -1,0 +1,107 @@
+%! TEX program = xelatex
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[letterpaper,left=0.55in,right=0.55in,top=0.38in,bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+
+\setmainfont{Times New Roman}
+\setCJKmainfont[AutoFakeBold=2]{Hiragino Mincho ProN}
+\setCJKsansfont[AutoFakeBold=2]{Hiragino Sans}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=black,
+  linkcolor=black
+}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=0.35in,itemsep=0.35em,topsep=0.2em}
+\sloppy
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\titlerule]
+\titlespacing*{\section}{0pt}{0.95em}{0.35em}
+
+\newcommand{\resumeHeader}[3]{%
+  \begin{center}
+    {\LARGE\bfseries #1}\\[0.35em]
+    #2\\[0.25em]
+    #3
+  \end{center}
+  \vspace{0.55em}
+}
+
+\newcommand{\educationEntry}[3]{%
+  \noindent
+  \begin{tabular*}{\textwidth}{@{}l@{\extracolsep{\fill}}r@{}}
+    #1、#2 & #3 \\
+  \end{tabular*}
+  \vspace{1.1em}
+}
+
+\newcommand{\skillLine}[2]{%
+  \textbf{#1。} #2\par\vspace{0.45em}
+}
+
+\newcommand{\projectEntry}[2]{%
+  \textbf{#1。} #2\par\vspace{0.85em}
+}
+
+\begin{document}
+
+\resumeHeader
+  {}
+  {090-6328-2636 $\diamond$ 京都、日本}
+  {\href{mailto:yanlin.xzb@gmail.com}{yanlin.xzb@gmail.com}}
+
+\section{学歴}
+
+\educationEntry
+  {\textbf{コンピュータサイエンス修士課程}}
+  {京都大学}
+  {2024.4 - 2026.4 修了見込み}
+
+\educationEntry
+  {\textbf{サイバースペースセキュリティ学士}}
+  {上海大学}
+  {2019 - 2023}
+
+\section{スキル}
+
+\skillLine{履修科目}{データ構造とアルゴリズム、オペレーティングシステム、C++/C、Python、暗号学入門、コンピュータネットワーク、機械学習入門、ネットワークセキュリティ、情報理論、データベースなど}
+
+\skillLine{プログラミングスキル}{C++/C、Python、Golang、Java、Kotlin、Javascript、SQL}
+
+\skillLine{言語スキル}{英語（B2）、日本語（JLPT N1）、中国語（ネイティブ）}
+
+\section{プロジェクト}
+
+\projectEntry{Morning Call}{Kotlinを用いたビデオ・音声チャットアプリのバックエンド開発を主に担当しました。本プロジェクトは、ユーザー同士が「おはよう」アラームを設定し合えるソフトウェアの開発を目的としています。主な機能は、ログイントークン検証、ユーザー登録、プライベートチャット、グループチャット、ビデオ通話による起床時刻設定です。プライベートチャットおよびグループチャットは、WebSocketsとメッセージキューRabbitMQを用いて実装する予定です。主要技術スタックはKtor、Socket、RabbitMQ、MySQL、Redisです。}
+
+\projectEntry{Insight}{ネタバレを避けながら漫画コンテンツについて自由に議論できるSNSの開発を目的としたプロジェクトです。主な機能は、ログイントークン検証、ユーザー登録、漫画の章ごとの分類、既読章に基づくコメント表示、コメントへのいいねです。gRPCを用いて複数サービス間のリクエストを連携し、マイクロサービスに近いバックエンドアーキテクチャを実装します。主要技術スタックはGin、gRPC、Golang、gorm、MySQL、Redisです。}
+
+\projectEntry{Healthcare Reservation Website}{Javaを中心に構築したヘルスケア予約Webサイトのプロジェクトです。主な機能は、健康診断予約のスケジューリング、検査種別の管理、検査結果の管理、コメント機能です。バックエンドの技術スタックはSpringBootとMySQL、フロントエンドの技術スタックはVUE、HTML、JavaScriptです。}
+
+\projectEntry{卒業論文}{グリッドマップに基づく自動運転車両の環境認識判断を研究しました。認識システムには動的異種冗長構造を採用し、複数の異種センサーから得られるデータを処理・分析する環境認識判断アルゴリズムをPythonで設計しました。これにより、システムの信頼性と安全性の向上を目指しました。提案手法のシミュレーションには、オープンソースの自動運転シミュレーターであるCarlaを使用しました。}
+
+\section{課外活動}
+
+\begin{itemize}
+  \item \textbf{2020-2021 ShangAiボランティアチーム}\\
+  会場案内や野良猫への餌やりなど、オフライン活動に積極的に参加しました。
+
+  \item \textbf{2020-2022 Creation Club副会長（スタークラブ認定）}\\
+  学内ロボットイノベーションコンテストを複数回企画し、外部企業とのイベント開催を支援しました。
+\end{itemize}
+
+\end{document}
