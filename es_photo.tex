@@ -3,6 +3,7 @@
 
 \usepackage[letterpaper,left=0.55in,right=0.55in,top=0.38in,bottom=0.45in]{geometry}
 \usepackage{xcolor}
+\usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{enumitem}
 \usepackage{titlesec}
@@ -28,11 +29,20 @@
 \titlespacing*{\section}{0pt}{0.78em}{0.28em}
 
 \newcommand{\resumeHeader}[6]{%
-  \begin{center}
+  \noindent
+  \begin{minipage}[c]{0.15\textwidth}
+    \mbox{}
+  \end{minipage}%
+  \begin{minipage}[c]{0.70\textwidth}
+    \centering
     {\LARGE\bfseries #1}\\[0.28em]
     #2\\[0.18em]
     {\small #3 $\diamond$ #4 $\diamond$ #5 $\diamond$ #6}
-  \end{center}
+  \end{minipage}%
+  \begin{minipage}[c]{0.15\textwidth}
+    \raggedleft
+    \includegraphics[width=0.95in,height=1.20in,keepaspectratio]{pic/cy.jpeg}
+  \end{minipage}
   \vspace{0.42em}
 }
 
@@ -90,7 +100,7 @@
 
 \section{Skills}
 
-\skillLine{Completed Course}{Data Structures and Algorithms, Operating Systems, Introduction to Artificial Intelligence, Computer Networks, Information Security, 
+\skillLine{Completed Course}{Data Structures and Algorithms, Operating Systems, Introduction to Artificial Intelligence, Computer Networks, Information Security,
 Information Theory, Database Systems and so on}
 
 \skillLine{Programming Skills}{Python, Golang, C, Vimscript, SQL, Rust}
@@ -118,18 +128,13 @@ an AI-powered calendar that recommends meals from users' schedules, activity,
 and dietary history. Implemented JWT authentication, profile and event
 management, recommendation workflows, and validation middleware using Go,
 Gin, GORM, and PostgreSQL.}
-	% \projectEntry{Insight}{The goal is to develop a social networking service (SNS) where users can freely discuss manga content while avoiding spoilers. The main features include user login token verification, registration, classification of manga by chapters, displaying comments based on the chapters read, and liking comments.\ gRPC will be used to coordinate different service requests, implementing a backend architecture similar to microservices. The primary technology stack of this project includes the Gin, gRPC, Golang, gorm, MySQL, and Redis.}
-%
-% \projectEntry{Healthcare Reservation Website}{The project mainly constructs a Healthcare Reservation Website, primarily built using JAVA.\@ The main functionalities include scheduling physical examination appointments, managing examination types, managing examination results, and a commenting feature. The backend technology stack of this project includes SpringBoot and MySQL, while the frontend technology stack consists of VUE, HTML, and JavaScript.}
-%
+
 \projectEntry{Simblock\_go}{Reimplemented the SimBlock blockchain network
 simulator in Go, including a discrete-event engine, network topology
 processing, Proof-of-Work consensus, and asynchronous handling of Inv, Block,
 and CmpctBlock messages. Added YAML configuration, shell-based workflows, and
 integration tests.}
-% \projectEntry{hackmd.vim}{
-%
-% }
+
 \projectEntry{Conference Paper}{Proposed GOFA, a gradient-oriented backdoor
 attack on Vertical Federated Learning that constructs poisoned samples from
 server-returned gradients and masks their original features with adversarial
